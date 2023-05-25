@@ -21,7 +21,7 @@ namespace AutoPlac.Repozitorijumi.Migrations
                     Marka = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Godiste = table.Column<int>(type: "int", nullable: false),
                     Cena = table.Column<int>(type: "int", nullable: false),
-                    DatumIzdanja = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DatumProdaje = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

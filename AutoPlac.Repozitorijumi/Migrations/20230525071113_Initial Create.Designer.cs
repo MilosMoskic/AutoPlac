@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoPlac.Repozitorijumi.Migrations
 {
     [DbContext(typeof(AutoPlacDBContext))]
-    [Migration("20230510114954_Initial Create")]
+    [Migration("20230525071113_Initial Create")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -36,7 +36,7 @@ namespace AutoPlac.Repozitorijumi.Migrations
                     b.Property<int>("Cena")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DatumIzdanja")
+                    b.Property<DateTime>("DatumProdaje")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Godiste")

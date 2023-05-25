@@ -32,7 +32,7 @@ namespace AutoPlac.Repozitorijumi.Repozitorijumi
         {
             return _ctx.Automobil.Add(obj).Entity;
         }
-
+         
         public void Obrisi(object ID)
         {
             var postoji = _ctx.Automobil.Find(ID);

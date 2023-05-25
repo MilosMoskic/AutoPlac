@@ -23,7 +23,7 @@ namespace AutoPlac.Servisi.Servisi
                 Id = podatci.Id,
                 Naziv = obj.Naziv,
                 Marka = obj.Marka,
-                DatumIzdanja = obj.DatumIzdanja,
+                DatumProdaje = obj.DatumProdaje,
                 Godiste = obj.Godiste,
                 Cena = obj.Cena
 
@@ -40,7 +40,7 @@ namespace AutoPlac.Servisi.Servisi
             {
                 Naziv = automobil.Naziv,
                 Marka = automobil.Marka,
-                DatumIzdanja = automobil.DatumIzdanja,
+                DatumProdaje = automobil.DatumProdaje,
                 Godiste = automobil.Godiste,
                 Cena = automobil.Cena
             };
@@ -78,13 +78,13 @@ namespace AutoPlac.Servisi.Servisi
                     Id = item.Id,
                     Naziv = item.Naziv,
                     Marka = item.Marka,
-                    DatumIzdanja = item.DatumIzdanja,
+                    DatumProdaje = item.DatumProdaje,
                     Godiste = item.Godiste,
                     Cena = item.Cena
                 };
                 automobili.Add(automobil);
             }
-            return automobili.OrderBy(f => f.DatumIzdanja).ToList();
+            return automobili.OrderBy(f => f.DatumProdaje).ToList();
         }
 
         public async Task<IEnumerable<Automobil>> PrikazSvihAutomobilaPoMarkiAsync(object Marka)
@@ -102,13 +102,13 @@ namespace AutoPlac.Servisi.Servisi
                     Id = item.Id,
                     Naziv = item.Naziv,
                     Marka = item.Marka,
-                    DatumIzdanja = item.DatumIzdanja,
+                    DatumProdaje = item.DatumProdaje,
                     Godiste = item.Godiste,
                     Cena = item.Cena
                 };
                 automobili.Add(automobil);
             }
-            return automobili.OrderBy(f => f.DatumIzdanja).ToList();
+            return automobili.OrderBy(f => f.DatumProdaje).ToList();
         }
 
         public async Task<IEnumerable<Automobil>> PrikazSvihAutomobilaPoCeniAsync(object Cena)
@@ -126,13 +126,13 @@ namespace AutoPlac.Servisi.Servisi
                     Id = item.Id,
                     Naziv = item.Naziv,
                     Marka = item.Marka,
-                    DatumIzdanja = item.DatumIzdanja,
+                    DatumProdaje = item.DatumProdaje,
                     Godiste = item.Godiste,
                     Cena = item.Cena
                 };
                 automobili.Add(automobil);
             }
-            return automobili.OrderBy(f => f.DatumIzdanja).ToList();
+            return automobili.OrderBy(f => f.DatumProdaje).ToList();
         }
     }
 }

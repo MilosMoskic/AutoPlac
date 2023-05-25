@@ -33,7 +33,7 @@ namespace AutoPlac.Repozitorijumi.Migrations
                     b.Property<int>("Cena")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DatumIzdanja")
+                    b.Property<DateTime>("DatumProdaje")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Godiste")

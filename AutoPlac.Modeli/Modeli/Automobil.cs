@@ -10,6 +10,6 @@ namespace AutoPlac.Modeli.Modeli
         public string Marka { get; set; }
         public int Godiste { get; set; }
         public int Cena { get; set; }
-        public DateTime DatumIzdanja { get; set; }
+        public DateTime DatumProdaje { get; set; }
     }
 }
