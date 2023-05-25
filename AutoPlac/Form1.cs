@@ -1,6 +1,5 @@
 using AutoPlac.Modeli.Modeli;
 using AutoPlac.Servisi.Interfejsi;
-using System.Windows.Forms;
 
 namespace AutoPlac
 {
@@ -17,7 +16,9 @@ namespace AutoPlac
         {
             int offset = 0;
             DataGridView tabelaPodataka = tabela;
-            int cnt = tabelaPodataka.RowCount;
+
+            int cnt = 0;
+            cnt = tabelaPodataka.RowCount;
 
             if (cnt < 11) offset = 8;
             else offset = 0;
@@ -28,8 +29,8 @@ namespace AutoPlac
             tabelaPodataka.Columns["Naziv"].Width = 190;
             tabelaPodataka.Columns["Marka"].HeaderText = "Marka";
             tabelaPodataka.Columns["Marka"].Width = 150 + offset;
-            tabelaPodataka.Columns["DatumIzdanja"].HeaderText = "Datum izdavanja";
-            tabelaPodataka.Columns["DatumIzdanja"].Width = 60 + offset;
+            tabelaPodataka.Columns["DatumProdaje"].HeaderText = "DatumProdaje";
+            tabelaPodataka.Columns["DatumProdaje"].Width = 60 + offset;
             tabelaPodataka.Columns["Cena"].HeaderText = "Cena";
             tabelaPodataka.Columns["Cena"].Width = 50;
             tabelaPodataka.Columns["Godiste"].HeaderText = "Godiste";
@@ -58,7 +59,7 @@ namespace AutoPlac
 
                 AutomobilZaIzmenu.Naziv = txtNaziv.Text;
                 AutomobilZaIzmenu.Marka = txtMarka.Text;
-                AutomobilZaIzmenu.DatumIzdanja = DateTime.Parse(date.Text);
+                AutomobilZaIzmenu.DatumProdaje = DateTime.Parse(date.Text);
                 AutomobilZaIzmenu.Godiste = Int32.Parse(txtGodiste.Text);
                 AutomobilZaIzmenu.Cena = Int32.Parse(txtCena.Text);
 
@@ -86,7 +87,7 @@ namespace AutoPlac
                 {
                     Naziv = txtNaziv.Text,
                     Marka = txtMarka.Text,
-                    DatumIzdanja = DateTime.Parse(date.Text),
+                    DatumProdaje = DateTime.Parse(date.Text),
                     Godiste = Int32.Parse(txtGodiste.Text),
                     Cena = Int32.Parse(txtCena.Text)
                 };
@@ -119,7 +120,7 @@ namespace AutoPlac
 
                     var filterCena = Int32.Parse(txtFilter.Text);
 
-                    filtrirano = await _automobilServis.PrikazSvihAutomobilaPoMarkiAsync(filterCena);
+                    filtrirano = await _automobilServis.PrikazSvihAutomobilaPoCeniAsync(filterCena);
                 }
                 else if (cbFilterMarka.Checked)
                 {
@@ -127,7 +128,7 @@ namespace AutoPlac
 
                     var filterMarka = txtFilter.Text;
 
-                    filtrirano = await _automobilServis.PrikazSvihAutomobilaPoCeniAsync(filterMarka);
+                    filtrirano = await _automobilServis.PrikazSvihAutomobilaPoMarkiAsync(filterMarka);
                 }
                 else
                 {
@@ -160,7 +161,7 @@ namespace AutoPlac
                 txtID.Text = selektovaniRed.Cells["Id"].Value.ToString();
                 txtNaziv.Text = selektovaniRed.Cells["Naziv"].Value.ToString();
                 txtMarka.Text = selektovaniRed.Cells["Marka"].Value.ToString();
-                date.Text = selektovaniRed.Cells["DatumIzdanja"].Value.ToString();
+                date.Text = selektovaniRed.Cells["DatumProdaje"].Value.ToString();
                 txtGodiste.Text = selektovaniRed.Cells["Godiste"].Value.ToString();
                 txtCena.Text = selektovaniRed.Cells["Cena"].Value.ToString();
             }
@@ -190,6 +191,5 @@ namespace AutoPlac
         {
 
         }
-
     }
 }
